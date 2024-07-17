@@ -10,11 +10,12 @@ class Category extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name', 'slug', 'visible'];
     public $timestamps = false;
+    protected $hidden = ['pivot'];
+    protected $casts = ['visible'=> 'boolean'];
 
     public function posts(): BelongsToMany {
         return $this->belongsToMany(Post::class);
     }
-
-    protected $hidden = ['pivot'];
 }

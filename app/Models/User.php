@@ -34,6 +34,6 @@ class User extends Model
      */
     public function userCategories(): Collection
     {
-        return new Collection($this->comments()->with('post.categories')->get()->pluck('post.categories')->flatten()->unique('id')->values()->toArray());
+        return $this->comments()->with('post.categories')->get()->pluck('post.categories')->flatten()->unique('id')->values();
     }
 }
