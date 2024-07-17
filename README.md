@@ -16,3 +16,6 @@ Para "userCategories" se ha hecho uso de la carga anidada, también está detall
 Para el crud de categorías hemos creado un controlador de tipo resource, con esto hemos conseguido, de una parte, no tener que declarar todas las rutas en el router de la api, ya que añadiendo el resource es suficiente. Con esto y habiendo especificado el modelo asociado a este controlador, laravel se ha encargado de crear todas las funciones del crud, y en las que es necesario, como por ejemplo show, update.., que reciban como parámetro el objeto category, logrando así no tener que buscarlo dentro del método del controlador.
 Para los métodos store y update, se ha creado una clase Request personalizada, que incluye las validaciones de los parámetros que se envían en el body de la petición.
 Para controlar el mensaje que devuelve la API cuando se introduce un id de una categoría que no existe, se ha manejado de forma global la excepción que lanza laravel al no encontrar el recurso, y personalizado la respuesta.
+
+## Post Activity
+Para resolver esta tarea se ha creado un api resource que es el encargado de formatear la respuesta y devolverla tal y como se solicita en el apartado, permitiendo así dejar el controlador limpio y que sea esa clase quien se encargue de llevar a cabo esa acción.
