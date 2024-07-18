@@ -1,6 +1,9 @@
 <?php
 
 namespace Database\Seeders;
+
+use App\Models\Category;
+use App\Models\Post;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -11,21 +14,11 @@ class CategoryPostSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('category_post')->insert([
-            'category_id' => 1,
-            'post_id' => 1
-        ]);
-        DB::table('category_post')->insert([
-            'category_id' => 3,
-            'post_id' => 2
-        ]);
-        DB::table('category_post')->insert([
-            'category_id' => 2,
-            'post_id' => 3
-        ]);
-        DB::table('category_post')->insert([
-            'category_id' => 4,
-            'post_id' => 4
-        ]);
+        for ($i = 1; $i <= 4; $i++) {
+            DB::table('category_post')->insert([
+                'category_id' => (Category::all()->random())->id,
+                'post_id' => (Post::doesntHave('categories')->first())->id
+            ]);
+        }
     }
 }

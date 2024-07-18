@@ -19,3 +19,11 @@ Para controlar el mensaje que devuelve la API cuando se introduce un id de una c
 
 ## Post Activity
 Para resolver esta tarea se ha creado un api resource que es el encargado de formatear la respuesta y devolverla tal y como se solicita en el apartado, permitiendo así dejar el controlador limpio y que sea esa clase quien se encargue de llevar a cabo esa acción.
+
+
+## Test  
+Se han creado distintos test unitarios y de features para comprobar los siguientes apartados:  
+  
+- Rutas de API (Realizando crud y comprobando respuestas y códigos http)  
+- BBDD (Lanzando los seeders y comprobando la cantidad de registros generados y crud de cada modelo)  
+- Relaciones (Accediendo a los objetos a través de las relaciones y comprobando que la instancia devuelta sea correcta)
